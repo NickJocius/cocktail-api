@@ -20,6 +20,11 @@ export default {
         to: { name: "Home" },
         icon: "pi pi-home",
       },
+      {
+        label: "Cocktails",
+        to: { name: "Cocktails" },
+        icon: "pi pi-arrow-circle-down",
+      },
     ]);
     return { items };
   },
@@ -33,5 +38,6 @@ export default {
 #TopNav {
   position: fixed;
   min-width: 100%;
+  z-index: 9999;
 }
 </style>
