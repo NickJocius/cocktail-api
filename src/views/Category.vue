@@ -1,6 +1,6 @@
 <template>
-  <div class="" id="Category">
-    <div class="card">
+  <div class="p-d-flex p-ai-center p-py-4" id="Category">
+    <div class="card p-p-4">
       <DataView
         :value="drinks"
         :paginator="true"
@@ -29,9 +29,7 @@
           <div class="p-col-12">
             <div class="product-list-item">
               <img
-                :src="
-                  slotProps.data.strDrinkThumb + '/preview (100x100 pixels)'
-                "
+                :src="slotProps.data.strDrinkThumb + '/preview'"
                 :alt="slotProps.data.strDrink"
               />
               <div class="product-list-detail">
@@ -72,7 +70,7 @@
                   {{ slotProps.data.strDrink }}
                 </div>
                 <Rating
-                  :modelValue="slotProps.data.rating"
+                  :modelValue="rating"
                   :readonly="true"
                   :cancel="false"
                 ></Rating>
@@ -95,6 +93,7 @@ import CocktailService from "../services/CocktailService";
 import DataView from "primevue/dataview";
 import Rating from "primevue/rating";
 import Dropdown from "primevue/dropdown";
+import DataViewLayoutOptions from "primevue/dataviewlayoutoptions";
 
 export default {
   props: {
@@ -143,11 +142,16 @@ export default {
     };
   },
   name: "Category",
-
+  data() {
+    return {
+      rating: Math.floor(Math.random() * 5),
+    };
+  },
   components: {
     DataView,
     Rating,
     Dropdown,
+    DataViewLayoutOptions,
   },
 };
 </script>
