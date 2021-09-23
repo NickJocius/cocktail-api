@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style>
+/* Global-General*/
 body {
   margin: 0;
 }
@@ -29,5 +30,29 @@ body {
   text-align: center;
   color: #2c3e50;
   margin: 0;
+}
+/* TopNav base styles */
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: yellow !important;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text:hover {
+  color: rgb(159, 71, 231) !important;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-icon {
+  color: rgb(159, 71, 231) !important;
 }
 </style>

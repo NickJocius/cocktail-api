@@ -5,19 +5,20 @@ import Category from '../views/Category.vue';
 const routes = [
     {
         path: "/",
-        name: "Home",
+        name: "home",
         component: Home
     },
     {
         path: "/cocktails",
-        name: "Cocktails",
+        name: "cocktails",
         component: Cocktails,
     },
     {
-        path: "/category/:name",
-        name: "Category",
+        path: "/category/:cat",
+        name: "category",
         component: Category,
-        props: true
+        props: true,
+        
     }
 ]
 

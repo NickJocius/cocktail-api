@@ -43,7 +43,7 @@
                   :cancel="false"
                 ></Rating>
                 <i class="pi pi-tag product-category-icon"></i
-                ><span class="product-category">{{ name }}</span>
+                ><span class="product-category">{{ cat }}</span>
               </div>
               <div class="product-list-action">
                 <span class="product-price">${{ slotProps.data.idDrink }}</span>
@@ -57,7 +57,7 @@
               <div class="product-grid-item-top">
                 <div>
                   <i class="pi pi-tag product-category-icon"></i>
-                  <span class="product-category">{{ name }}</span>
+                  <span class="product-category">{{ cat }}</span>
                 </div>
               </div>
               <div class="product-grid-item-content">
@@ -97,12 +97,13 @@ import DataViewLayoutOptions from "primevue/dataviewlayoutoptions";
 
 export default {
   props: {
-    name: String,
+    cat: String,
   },
+
   setup(props) {
     onMounted(() => {
       cocktailService.value
-        .getCategory(props.name)
+        .getCategory(props.cat)
         .then((data) => (drinks.value = data));
     });
 
