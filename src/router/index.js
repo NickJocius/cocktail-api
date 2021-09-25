@@ -1,7 +1,8 @@
+import { defineAsyncComponent } from "@vue/runtime-core";
 import { createRouter, createWebHistory } from "vue-router";
-import Home from '../views/Home.vue';
-import Cocktails from '../views/Cocktails.vue';
-import Category from '../views/Category.vue';
+const Home = defineAsyncComponent(() => import('../views/Home.vue')) ;
+const Cocktails = defineAsyncComponent(() => import('../views/Cocktails.vue') ) ;
+const Category = defineAsyncComponent(() =>  import('../views/Category.vue'));
 const routes = [
     {
         path: "/",

@@ -114,10 +114,14 @@ export default {
 #TopNav {
   position: fixed;
   min-width: 100%;
+  max-width: 100%;
   z-index: 9999;
   background: black;
+  margin: 0;
 }
-
+.p-menubar-root-list {
+  max-width: 100vw;
+}
 .p-menubar {
   background: black;
   border: none;

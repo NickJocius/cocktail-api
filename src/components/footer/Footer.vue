@@ -8,17 +8,17 @@
     <Divider layout="vertical" />
     <div class="p-col">
       <ul>
-        <li>Home</li>
+        <li>Contact</li>
       </ul>
     </div>
     <Divider layout="vertical" />
     <div class="p-col">
       <ul>
-        <li>Home</li>
+        <li>About</li>
       </ul>
     </div>
   </div>
-  <p class="p-text-center">&copy;Resonance Web Design</p>
+  <p class="p-text-center" id="p">&copy;Resonance Web Design</p>
 </template>
 <script>
 import Divider from "primevue/divider";
@@ -31,7 +31,13 @@ export default {
 </script>
 <style scoped>
 #Footer {
-  padding: 2rem 4rem;
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+}
+
+#p {
+  color: white;
 }
 
 #Footer ul {

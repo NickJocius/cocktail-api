@@ -1,7 +1,19 @@
 <template>
   <TopNav />
-  <router-view :key="$route.fullPath"></router-view>
-  <Footer />
+  <transition
+    name="custom-classes-transition"
+    enter-active-class="animated fadeIn animate_slow"
+    leave-active-class="animated fadeOut"
+  >
+    <router-view :key="$route.fullPath"> </router-view>
+  </transition>
+  <transition
+    name="custom-classes-transition"
+    enter-active-class="animated fadeIn animate_slow"
+    leave-active-class="animated fadeOut "
+  >
+    <Footer />
+  </transition>
 </template>
 
 <script>
@@ -20,8 +32,15 @@ export default {
 
 <style>
 /* Global-General*/
+html {
+  width: 100vw;
+  min-width: 100vw;
+}
 body {
   margin: 0;
+  min-width: 100%;
+  height: 100vh;
+  background: black;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -30,6 +49,8 @@ body {
   text-align: center;
   color: #2c3e50;
   margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
 }
 /* TopNav base styles */
 .p-menubar

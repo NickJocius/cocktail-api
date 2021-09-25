@@ -1,6 +1,6 @@
 <template>
-  <div class="p-d-flex p-ai-center p-py-4" id="Category">
-    <div class="card p-p-4">
+  <div class="p-d-flex p-ai-center p-jc-center p-py-4" id="Category">
+    <div class="card p-pt-4" id="dataCard">
       <DataView
         :value="drinks"
         :paginator="true"
@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref, onBeforeMount } from "vue";
 
 import CocktailService from "../services/CocktailService";
 import DataView from "primevue/dataview";
@@ -102,7 +102,7 @@ export default {
   },
 
   setup(props) {
-    onMounted(() => {
+    onBeforeMount(() => {
       cocktailService.value
         .getCategory(props.cat)
         .then((data) => (drinks.value = data));
@@ -115,12 +115,12 @@ export default {
     const sortOrder = ref();
     const sortField = ref();
     const sortOptions = ref([
-      { label: "A - Z", value: "!idDrink" },
-      { label: "Z - A", value: "idDrink" },
+      { label: "A - Z", value: "!strDrink" },
+      { label: "Z - A", value: "strDrink" },
     ]);
     const onSortChange = (event) => {
-      const value = parseInt(event.value.value);
-      const sortValue = parseInt(event.value);
+      const value = event.value.value;
+      const sortValue = event.value;
 
       if (value.indexOf("!") === 0) {
         sortOrder.value = -1;
@@ -162,13 +162,11 @@ export default {
 
 <style scoped>
 #Category {
-  min-height: 100vh;
+  height: 100%;
   min-width: 100%;
 }
-.p-dataview .p-dataview-grid {
-  background: rgba(97, 241, 68, 0.6) !important;
-}
-.card {
+
+#dataCard {
   background: #020202fa;
   padding: 2rem;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
@@ -176,11 +174,21 @@ export default {
   border-radius: 4px;
   margin-bottom: 2rem;
   color: white;
+  min-width: 100%;
+}
+
+.p-dataview {
+  height: 100%;
+}
+.p-dataview .p-dataview-grid {
+  background: rgba(97, 241, 68, 0.6) !important;
   min-height: 100vh;
 }
+
 .p-dropdown {
   width: 14rem;
   font-weight: normal;
+  display: none;
 }
 
 .product-name {
@@ -209,6 +217,10 @@ export default {
 
   padding: 1rem;
   width: 100%;
+}
+
+.p-dataview-content .product-grid-item .card {
+  background: black;
 }
 
 .product-grid-item-top,

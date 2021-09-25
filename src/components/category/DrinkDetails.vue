@@ -113,5 +113,6 @@ export default {
 
 .p-button {
   background: #2e5bfd;
+  margin-bottom: 2rem;
 }
 </style>
