@@ -18,6 +18,7 @@
       </ul>
     </div>
   </div>
+  <p class="p-text-center">&copy;Resonance Web Design</p>
 </template>
 <script>
 import Divider from "primevue/divider";
@@ -30,7 +31,7 @@ export default {
 </script>
 <style scoped>
 #Footer {
-  padding: 3rem 6rem;
+  padding: 2rem 4rem;
 }
 
 #Footer ul {

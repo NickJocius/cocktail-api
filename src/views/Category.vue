@@ -46,7 +46,7 @@
                 ><span class="product-category">{{ cat }}</span>
               </div>
               <div class="product-list-action">
-                <span class="product-price">${{ slotProps.data.idDrink }}</span>
+                <DrinkDetails :drinkId="slotProps.data.idDrink" />
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
                 ></Rating>
               </div>
               <div class="product-grid-item-bottom">
-                <span class="product-price">${{ slotProps.data.idDrink }}</span>
+                <DrinkDetails :drinkId="slotProps.data.idDrink" />
               </div>
             </div>
           </div>
@@ -94,6 +94,7 @@ import DataView from "primevue/dataview";
 import Rating from "primevue/rating";
 import Dropdown from "primevue/dropdown";
 import DataViewLayoutOptions from "primevue/dataviewlayoutoptions";
+import DrinkDetails from "../components/category/DrinkDetails.vue";
 
 export default {
   props: {
@@ -153,7 +154,9 @@ export default {
     Rating,
     Dropdown,
     DataViewLayoutOptions,
+    DrinkDetails,
   },
+  methods: {},
 };
 </script>
 
@@ -162,14 +165,17 @@ export default {
   min-height: 100vh;
   min-width: 100%;
 }
+.p-dataview .p-dataview-grid {
+  background: rgba(97, 241, 68, 0.6) !important;
+}
 .card {
-  background: #ffffff;
+  background: #020202fa;
   padding: 2rem;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   margin-bottom: 2rem;
-
+  color: white;
   min-height: 100vh;
 }
 .p-dropdown {
@@ -198,7 +204,9 @@ export default {
 
 .product-list-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
   padding: 1rem;
   width: 100%;
 }
@@ -223,12 +231,30 @@ export default {
   text-align: center;
 }
 
+.product-grid-item-content img {
+  transform: scale(1.2);
+}
+
 .product-grid-item .product-price {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
+.product-grid-item-content > img:hover {
+  box-shadow: 4px 4px 20px rgba(249, 231, 133, 0.6),
+    6px 6px 30px rgba(133, 249, 143, 0.453),
+    8px 8px 40px rgba(249, 231, 133, 0.6);
+}
+
+.product-grid-item-bottom {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 576px) {
+  .card {
+    padding: 2rem 0 !important;
+  }
   .product-list-item {
     flex-direction: column;
     align-items: center;
