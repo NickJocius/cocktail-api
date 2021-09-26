@@ -1,5 +1,5 @@
 <template>
-  <div class="p-d-flex p-ai-center p-jc-center p-py-4" id="Category">
+  <div class="p-d-flex p-ai-center p-jc-center p-py-6" id="Category">
     <div class="card p-pt-4" id="dataCard">
       <DataView
         :value="drinks"
@@ -38,7 +38,7 @@
                   {{ slotProps.data.description }}
                 </div>
                 <Rating
-                  :modelValue="slotProps.data.rating"
+                  :modelValue="Math.floor(Math.random() * 5) + 1"
                   :readonly="true"
                   :cancel="false"
                 ></Rating>
@@ -70,7 +70,7 @@
                   {{ slotProps.data.strDrink }}
                 </div>
                 <Rating
-                  :modelValue="rating"
+                  :modelValue="Math.floor(Math.random() * 5) + 1"
                   :readonly="true"
                   :cancel="false"
                 ></Rating>
@@ -161,6 +161,7 @@ export default {
 </script>
 
 <style scoped>
+/****** Main Sections ******/
 #Category {
   height: 100%;
   min-width: 100%;
@@ -168,7 +169,7 @@ export default {
 
 #dataCard {
   background: #020202fa;
-  padding: 2rem;
+  padding: 6rem 2rem;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -177,6 +178,7 @@ export default {
   min-width: 100%;
 }
 
+/****** DataView ******/
 .p-dataview {
   height: 100%;
 }
@@ -210,6 +212,7 @@ export default {
   vertical-align: middle;
 }
 
+/****** List View ******/
 .product-list-item {
   display: flex;
   justify-content: space-between;
@@ -219,6 +222,7 @@ export default {
   width: 100%;
 }
 
+/******  Grid View ******/
 .p-dataview-content .product-grid-item .card {
   background: black;
 }
@@ -237,6 +241,7 @@ export default {
 .product-grid-item {
   margin: 0.5rem;
   border: 1px solid #dee2e6;
+  box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.12);
 }
 
 .product-grid-item-content {
@@ -263,6 +268,7 @@ export default {
   margin-top: 2rem;
 }
 
+/****** Media Queries ******/
 @media screen and (max-width: 576px) {
   .card {
     padding: 2rem 0 !important;

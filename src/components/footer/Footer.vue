@@ -38,9 +38,12 @@ export default {
 
 #p {
   color: white;
+  font-family: var(--PermMarker);
 }
 
 #Footer ul {
   list-style: none;
+  font-family: var(--PermMarker);
+  font-size: 1.1rem;
 }
 </style>
