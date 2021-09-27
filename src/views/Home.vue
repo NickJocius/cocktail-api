@@ -3,18 +3,17 @@
     <Section1 />
   </div>
   <div id="section2" class="p-d-flex p-ai-center">
-    <Image :src="glasses" alt="Colored Glasses" />
+    <img :src="glasses" alt="Colored Glasses" />
   </div>
 </template>
 
 <script>
 import Section1 from "../components/cards/home/Section1.vue";
-import Image from "primevue/image";
+
 import glasses from "../assets/images/glasses.jpg";
 export default {
   components: {
     Section1,
-    Image,
   },
   data() {
     return {
@@ -33,5 +32,9 @@ export default {
 #section2 {
   background: black;
   min-height: 100vh;
+}
+
+img {
+  max-width: 100% !important;
 }
 </style>
