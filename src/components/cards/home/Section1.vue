@@ -36,4 +36,11 @@ export default {
   font-size: 2.6rem;
   letter-spacing: 0.2rem;
 }
+
+/* Media Query */
+@media screen and (max-width: 576px) {
+  .p-card {
+    padding: 0;
+  }
+}
 </style>

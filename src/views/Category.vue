@@ -1,5 +1,6 @@
 <template>
-  <div class="p-d-flex p-ai-center p-jc-center p-py-6" id="Category">
+  <SectionHeader :title="cat" />
+  <div class="p-d-flex p-ai-center p-jc-center p-py-4" id="Category">
     <div class="card p-pt-4" id="dataCard">
       <DataView
         :value="drinks"
@@ -95,6 +96,7 @@ import Rating from "primevue/rating";
 import Dropdown from "primevue/dropdown";
 import DataViewLayoutOptions from "primevue/dataviewlayoutoptions";
 import DrinkDetails from "../components/category/DrinkDetails.vue";
+import SectionHeader from "../components/category/SectionHeader.vue";
 
 export default {
   props: {
@@ -155,6 +157,7 @@ export default {
     Dropdown,
     DataViewLayoutOptions,
     DrinkDetails,
+    SectionHeader,
   },
   methods: {},
 };
@@ -258,9 +261,9 @@ export default {
 }
 
 .product-grid-item-content > img:hover {
-  box-shadow: 4px 4px 20px rgba(249, 231, 133, 0.6),
-    6px 6px 30px rgba(133, 249, 143, 0.453),
-    8px 8px 40px rgba(249, 231, 133, 0.6);
+  box-shadow: 1px 1px 10px rgba(255, 112, 112, 0.344),
+    4px 4px 20px rgba(255, 0, 0, 0.344), 8px 8px 40px rgba(255, 0, 0, 0.344),
+    10px 10px 50px rgba(121, 39, 255, 0.344);
 }
 
 .product-grid-item-bottom {

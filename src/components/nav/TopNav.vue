@@ -2,18 +2,7 @@
   <div id="TopNav">
     <MenuBar :model="items">
       <template #start>
-        <img alt="logo" :src="neon" height="40" class="p-mr-2" />
-      </template>
-      <template #end>
-        <span class="p-input-icon-left">
-          <i class="pi pi-search" />
-          <InputText
-            placeholder="Search"
-            type="text"
-            v-model="value"
-            id="search"
-          />
-        </span>
+        <img alt="logo" :src="neon" height="60" class="p-mr-2" />
       </template>
     </MenuBar>
   </div>
@@ -21,7 +10,6 @@
 
 <script>
 import MenuBar from "primevue/menubar";
-import InputText from "primevue/inputtext";
 import neon from "../../assets/images/neon.png";
 import { ref } from "vue";
 
@@ -29,7 +17,6 @@ export default {
   name: "TopNav",
   components: {
     MenuBar,
-    InputText,
   },
   setup() {
     const items = ref([
@@ -112,21 +99,29 @@ export default {
 
 <style scoped>
 #TopNav {
-  position: fixed;
-  min-width: 100%;
-  max-width: 100%;
+  position: sticky;
+  width: 100%;
+
   z-index: 9999;
   background: black;
   margin: 0;
 }
 .p-menubar-root-list {
-  max-width: 100vw;
+  max-width: 100%;
 }
 .p-menubar {
   background: black;
   border: none;
+  max-width: 100%;
+  padding: 0 !important;
 }
+
 .p-menuitem-link:focus {
   outline: none;
+}
+
+.p-button:enabled:active {
+  background: black !important;
+  border-color: black;
 }
 </style>
